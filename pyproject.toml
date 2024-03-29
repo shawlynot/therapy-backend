@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "therapy_backend"
+authors = [
+    {name = "shawlynot"}
+]
+description = "Therapy backend"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]"
+    ]
+version="0.0.1"
+
+[project.optional-dependencies]
+tests = []
+
+[[tool.mypy.overrides]]
+module = 'therapy_backend'
