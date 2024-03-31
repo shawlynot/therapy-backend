@@ -1,3 +1,6 @@
+### Run
+`uvicorn therapy_backend.main:app --reload`
+
 ### Install
 `pip install -r requirements.txt`
 
