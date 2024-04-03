@@ -1,17 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
+from therapy_backend.api import account
+from therapy_backend.model import Account
 
-from therapy_backend.account.model import Account
+api_router = APIRouter(
+    prefix="/api/v1"
+)
+api_router.include_router(account.router)
 
 app = FastAPI()
-
-@app.get("/account/{accountId}")
-async def getAccount(accountId: int):
-    return {"message": "wazzzzup"}
-
-@app.post("/account")
-async def createAccount(account: Account):
-    return account
-
-@app.put("/account/{accountId}")
-async def updateAccount(accountId: int):
-    pass
+app.include_router(api_router)

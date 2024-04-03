@@ -14,7 +14,8 @@ classifiers = [
 ]
 dependencies = [
     "fastapi",
-    "uvicorn[standard]"
+    "uvicorn[standard]",
+    "sqlmodel"
     ]
 version="0.0.1"
 
