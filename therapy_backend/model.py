@@ -13,9 +13,3 @@ class Account(SQLModel, table=True):
     preferredname: str
     email: str
     accounttype: AccountType
-
-class CreateAccount(BaseModel):
-    fullname: str
-    preferredname: str
-    email: str
-    accounttype: AccountType

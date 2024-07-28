@@ -1,5 +1,7 @@
 from fastapi import APIRouter
-from therapy_backend.model import CreateAccount, Account
+from therapy_backend import db
+from therapy_backend.core.db import SessionFactory
+from therapy_backend.model import Account
 
 router = APIRouter(prefix="/account", tags=["accounts"])
 
@@ -9,16 +11,5 @@ async def getAccount(accountId: int):
     return {"message": "wazzzzup"}
 
 @router.post("")
-async def createAccount(account: CreateAccount) -> Account:
-    dbAccount = Account(
-        fullname = account.fullname,
-        preferredname = account.preferredname,
-        email = account.email,
-        accountType = account.accounttype
-    )
-    
-    return dbAccount
-
-@router.put("/{accountId}")
-async def updateAccount(accountId: int):
-    pass
+async def create_account(account: Account, session: SessionFactory) -> Account:
+    return db.create_account(session, account)
