@@ -15,7 +15,8 @@ classifiers = [
 dependencies = [
     "fastapi",
     "uvicorn[standard]",
-    "sqlmodel"
+    "sqlmodel",
+    "psycopg2-binary"
     ]
 version="0.0.1"
 

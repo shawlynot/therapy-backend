@@ -1,6 +1,6 @@
 from fastapi import FastAPI, APIRouter
 from therapy_backend.api import account
-from therapy_backend.model import Account
+import therapy_backend.core.db
 
 api_router = APIRouter(
     prefix="/api/v1"
