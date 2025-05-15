@@ -1,26 +1,10 @@
-import uuid
-from enum import StrEnum
-from sqlmodel import SQLModel, Field
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
+class Base(DeclarativeBase):
+    pass
 
-class AccountType(StrEnum):
-    CLIENT = "CLIENT"
-    PROFESSIONAL = "PROFESSIONAL"
-    SUPPORT = "SUPPORT"
-
-
-class AccountBase(SQLModel):
-    fullname: str
-    preferredname: str
-    email: str
-    accounttype: AccountType
-
-
-# Database model, database table inferred from class name
-class Account(AccountBase, table=True):
-    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
-    hashed_password: str
-
-
-class AccountCreate(AccountBase):
-    password: str
+class User(Base):
+    __tablename__ = "User"
+    user: Mapped[int] = mapped_column(primary_key=True)
+    email: Mapped[str]
+    password: Mapped[str] 

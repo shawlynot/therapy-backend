@@ -8,20 +8,19 @@ authors = [
     {name = "shawlynot"}
 ]
 description = "Therapy backend"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 classifiers = [
     "Programming Language :: Python :: 3"
 ]
 dependencies = [
-    "fastapi",
-    "uvicorn[standard]",
-    "sqlmodel",
+    "fastapi[standard]",
+    "SQLAlchemy",
     "psycopg2-binary"
     ]
 version="0.0.1"
 
 [project.optional-dependencies]
-tests = []
+dev = ["mypy", "alembic", "pytest", "pip-tools"]
 
 [[tool.mypy.overrides]]
 module = 'therapy_backend'

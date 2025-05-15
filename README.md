@@ -1,5 +1,5 @@
 ### Run
-`uvicorn therapy_backend.main:app --reload`
+`fastapi dev main.py`
 
 ### Install
 `pip install -r requirements.txt`
