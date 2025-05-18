@@ -1,5 +1,5 @@
 ### Run
-`fastapi dev main.py`
+`fastapi dev therapy_backend/main.py`
 
 ### Install
 `pip install -r requirements.txt`

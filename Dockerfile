@@ -1,6 +1,8 @@
 
 FROM python:3.13
 
+LABEL org.opencontainers.image.source=https://github.com/shawlynot/therapy-backend
+
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt

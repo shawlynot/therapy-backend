@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from therapy_backend.core.db import SessionFactory
+from therapy_backend.core.db import ConnectionFactory
 
 router = APIRouter(prefix="/account", tags=["accounts"])
 
@@ -10,5 +10,5 @@ async def getAccount(accountId: int):
 
 
 @router.post("")
-async def create_account(session: SessionFactory):
+async def create_account(session: ConnectionFactory):
     return {"message": "created"}
